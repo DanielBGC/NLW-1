@@ -83,5 +83,5 @@ function handleSelectedItem(event) {
     }
 
     //atualiza o input hidden com os itens selecionados
-    collectedItems.value = selectedItems
+    collectedItems.value = selectedItems.sort()
 }
