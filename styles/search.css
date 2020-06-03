@@ -30,8 +30,34 @@
     margin-right: 10px;
 }
 
+#page-search footer {
+	margin-top: 48px;
+
+	display: flex;
+	align-items: center;
+    justify-content: flex-end;
+    
+    margin-bottom: 50px;
+}
+
+#page-search footer a {
+	display: flex;
+	color: var(--title-color);
+	font-weight:700;	
+}
+
+#page-search footer a span {
+	margin-right: 16px;
+	display:flex;
+
+	background-image: url('../assets/icons/log-in.svg');
+
+	width:20px;
+	height:20px;
+}
+
 main {
-    margin: 80px;
+    margin: 60px;
 }
 
 main h3 {
