@@ -47,14 +47,5 @@ function getCities(event) {
     })
 }
 
-function getCityName(event) {
-    const cityInput = document.querySelector("input[name=city]")
-
-    const indexOfSelectedCity = event.target.selectedIndex;
-
-    cityInput.value = event.target.options[indexOfSelectedCity].text
-}
-
 ufSelect.addEventListener("change", getCities)
 
-citySelect.addEventListener("change", getCityName)
