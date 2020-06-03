@@ -33,25 +33,25 @@
 
                     <div class="field">
                         <label for="name">Nome da entidade</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
 
                     <div class="field-group">
                         <div class="field">
                             <label for="adress">Endereço</label>
-                            <input type="text" name="adress">
+                            <input type="text" name="adress" required>
                         </div>
 
                         <div class="field">
                             <label for="adress-number">Número/Complemento</label>
-                            <input type="text" name="adress-number">
+                            <input type="text" name="adress-number" required>
                         </div>
                     </div>
 
                     <div class="field-group">
                         <div class="field">
                             <label for="uf">Estado</label>
-                            <select name="uf" id="">
+                            <select name="uf" id="" required>
                                 <option value="">Selecione o estado</option>
                             </select>
 
@@ -60,7 +60,7 @@
 
                         <div class="field">
                             <label for="city">Cidade</label>
-                            <select name="city" id="" disabled>
+                            <select name="city" id="" disabled required>
                                 <option value="">selecione a cidade</option>
                             </select>
 
@@ -72,6 +72,38 @@
                     <legend>
                         <h2>Itens de coleta</h2>
                     </legend>
+
+                    <div class="items-grid">
+                        <li data-id="1">
+                            <img src="assets/icons/lampadas.svg" alt="Lâmpadas">
+                            <span>Lâmpadas</span>
+                        </li>
+
+                        <li data-id="2">
+                            <img src="assets/icons/baterias.svg" alt="Pilhas e Baterias">
+                            <span>Pilhas e Baterias</span>
+                        </li>
+
+                        <li data-id="3">
+                            <img src="assets/icons/papeis-papelao.svg" alt="Papéis e Papelão">
+                            <span>Papéis e Papelão</span>
+                        </li>
+
+                        <li data-id="4">
+                            <img src="assets/icons/eletronicos.svg" alt="Componentes Eletrônicos">
+                            <span>Componentes Eletrônicos</span>
+                        </li>
+
+                        <li data-id="5">
+                            <img src="assets/icons/organicos.svg" alt="Resíduos Orgânicos">
+                            <span>Resíduos Orgânicos</span>
+                        </li>
+
+                        <li data-id="6">
+                            <img src="assets/icons/oleo.svg" alt="Oléo de Cozinha">
+                            <span>Oléo de Cozinha</span>
+                        </li>
+                    </div>
 
 
                 </fieldset>
