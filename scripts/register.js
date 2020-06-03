@@ -49,3 +49,39 @@ function getCities(event) {
 
 ufSelect.addEventListener("change", getCities)
 
+const itemsToCollect = document.querySelectorAll(".items-grid li")
+
+for(const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem)
+}
+
+//input:hidden 
+const collectedItems = document.querySelector("input[name=items]")
+
+let selectedItems = []
+
+function handleSelectedItem(event) {
+    
+    //adicionando ou removendo a classe "selected", quando o item for selecionado
+    event.target.classList.toggle("selected")
+
+    const itemId = event.target.dataset.id
+
+    //verifica se existem itens selecionados e returna o seu index
+    const isSelected = selectedItems.findIndex(item => item == itemId) 
+ 
+
+    //remove o item do array se já estiver selecionado
+    if(isSelected >= 0) {
+        const filteredItems = selectedItems.filter(item => item != itemId)
+
+        selectedItems = filteredItems
+    }
+    //adiciona o item ao array se não estiver selecionado
+    else {
+        selectedItems.push(itemId)
+    }
+
+    //atualiza o input hidden com os itens selecionados
+    collectedItems.value = selectedItems
+}
