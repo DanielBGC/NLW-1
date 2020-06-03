@@ -1,0 +1,120 @@
+#page-register {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+#page-register header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-register header a {
+    color: var(--title-color);
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+}
+
+#page-register header a span {
+    background-image: url('../assets/icons/arrow-left.svg');
+    width: 20px;
+    height: 23px;
+
+    display: flex;
+
+    margin-right: 10px;
+}
+
+form {
+    background-color: white;
+    border-radius: 10px;
+
+    padding: 20px;
+    margin: 70px auto;
+
+    max-width: 800px;
+}
+
+form h1 {
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 60px;
+    border: 0;
+}
+
+form legend {
+    margin-bottom: 30px;
+}
+
+form legend h2 {
+    font-size: 24px;
+}
+
+form .field {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+form .field-group {
+    display: flex;
+}
+
+form input, 
+form select {
+    background-color: #f0f0f5;
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 18px;
+
+    border-radius: 10px;
+
+   /* outline: none; */
+}
+
+form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form .field-group .field:first-child {
+    margin-right: 50px;
+}
+
+form button {
+    width: 260px;
+    height: 50px;
+
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+
+    background-color: var(--primary-color);
+
+    border-radius: 10px;
+    border: 0;
+
+    margin-top: 30px;
+
+    transition: 400ms;
+}
+
+form button:hover {
+    background-color: var(--hover-color);
+}
