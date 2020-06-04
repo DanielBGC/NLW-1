@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{# importa e utiliza o arquivo layout.html #}
+{% extends "layout.html" %}
+
+{# Cria uma variável pageId #}
+{% set pageId = "page-search" %}
+
+{% block title %}
     <title>Listagem dos pontos de coleta</title>
+{% endblock title %}
 
-    <link rel="shortcut icon" href="assets/icons/logo.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/main.css">
+{# Bloco de estilos #}
+{% block styles %}
     <link rel="stylesheet" href="styles/search.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+{% endblock styles %}
 
-</head>
-
-<body>
+{# Bloco de conteúdo #}
+{% block content %}
     <div id="page-search">
         
             <!-- Pegando um arquivo separado através do nunjucks -->
@@ -23,7 +23,6 @@
             <main>
                 <h3> 2 Pontos </h3> encontrados
             
-
                 <div class="cards">
                     <div class="card">
                         <img src="https://lh3.googleusercontent.com/HOnppISRn2zCbaePkXR2ynOQM26kyz8GgtGAjV2gjHHqECtlTHzgSiQK6_D9rniYtMbFbKLJWuHb31Y1-qviPKPwh6U=s9999" alt="Colectoria">
@@ -53,8 +52,9 @@
                 <a href="register"><span></span>Cadastre um novo ponto de coleta</a>
             </footer>
     </div>
-
+{% endblock content %}
+    
+{# Bloco de scripts #}
+{% block scripts %}
     <script src="scripts/register.js"></script>
-</body>
-</html>
-
+{% endblock scripts %}

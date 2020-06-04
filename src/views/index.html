@@ -1,45 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoleta</title>
+{# importa e utiliza o arquivo layout.html #}
+{% extends "layout.html" %}
 
-    <link rel="shortcut icon" href="assets/icons/logo.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{# Cria uma variável pageId #}
+{% set pageId = "page-home" %}
 
-    <link rel="stylesheet" href="styles/main.css">
+{# Bloco de estilos #}
+{% block styles %}
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/modal.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+{% endblock styles %}
 
-</head>
+{% block content %}
+{# Bloco de conteúdo #}
+    <div class="content">
+        <header>
+            <img src="assets/icons/logo.svg" alt="Logomarca">
+            <a href="register"><span></span>Cadastre um ponto de coleta</a>
+        </header>
 
-<body>
-    <div id="page-home">
-        <div class="content">
-            <header>
-                <img src="assets/icons/logo.svg" alt="Logomarca">
-                <a href="register"><span></span>Cadastre um ponto de coleta</a>
-            </header>
+        <main>
+            <!-- 
+                Utilizando variáveis no HTML através do nunjucks 
+                <h1> {{ title }} </h1>
+            -->
+            <h1> Seu marketplace de coleta de resíduos </h1>
 
-            <main>
-                <!-- 
-                    Utilizando variáveis no HTML através do nunjucks 
-                    <h1> {{ title }} </h1>
-                -->
-                <h1> Seu marketplace de coleta de resíduos </h1>
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
-                <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-
-                <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
-            </main>
-        </div>
+            <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
+        </main>
     </div>
-
+{% endblock content %}
+    
+{# Bloco do modal #}
+{% block modal %}
     {% include "partials/modal.html" %}
+{% endblock modal %}
 
+{# Bloco de scripts #}
+{% block scripts %}
     <script src="scripts/index.js"></script>
-</body>
-</html>
+{% endblock scripts %}
 
