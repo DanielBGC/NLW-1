@@ -12,5 +12,15 @@ server.get("/",function(require, response) {
     response.sendFile(__dirname + "/views/index.html")
 })
 
+//(2) página de cadastro
+server.get("/register",function(require, response) {
+    response.sendFile(__dirname + "/views/register.html")
+})
+
+//(3) página de listagem
+server.get("/search",function(require, response) {
+    response.sendFile(__dirname + "/views/search.html")
+})
+
 //liga o servidor na porta 3000
 server.listen(3000)
