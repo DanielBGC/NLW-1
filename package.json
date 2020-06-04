@@ -1,0 +1,26 @@
+{
+  "name": "Ecoleta",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido durante a primeira edição da Next Level Week - Starter Trail",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielBGC/Ecoleta.git"
+  },
+  "keywords": [],
+  "author": "Daniel Borba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielBGC/Ecoleta/issues"
+  },
+  "homepage": "https://github.com/DanielBGC/Ecoleta#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
