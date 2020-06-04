@@ -52,6 +52,17 @@
 	}
 }
 
+@media(max-width:600px) {
+	#page-home .content h1 {
+		font-size: 40px;
+	}
+
+	#page-home .content p {
+		font-size: 20px;
+	}
+
+}
+
 @media(min-width: 2200px) {
 	#page-home {
 		background-position-x: 45vw;
