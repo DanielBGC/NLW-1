@@ -20,19 +20,24 @@ function getStates() {
 }
 getStates()
 
+//Função para carregar as cidades de cada estado
 function getCities(event) {
     const stateInput = document.querySelector("input[name=state]")
 
     const indexOfSelectedState = event.target.selectedIndex;
 
+    //atualiza o valor do input hidden com o nome do Estado
     stateInput.value = event.target.options[indexOfSelectedState].text
 
-    
+    //id do Estado
     let ufId = event.target.value
     
     const cityApi = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufId}/municipios`
 
+    //reseta o valor do "select city" sempre que troca de Estado
     citySelect.innerHTML = `<option value>Selecione a cidade</option>`
+
+    //desabilita o "select city" momentaneamente sempre que troca de Estado
     citySelect.disabled = true
 
     fetch(cityApi)
@@ -43,14 +48,17 @@ function getCities(event) {
             citySelect.innerHTML += `<option value="${city.nome}"> ${city.nome} </option>`
         }
 
+        //habilita o "select city" após carregar os municípios
         citySelect.disabled = false;
     })
 }
 
+//chama a função getCities sempre que o usuário escolhe um novo Estado
 ufSelect.addEventListener("change", getCities)
 
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 
+//Adiciona a função handleSelectedItem em cada um dos itens de coleta
 for(const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
@@ -58,6 +66,7 @@ for(const item of itemsToCollect) {
 //input:hidden 
 const collectedItems = document.querySelector("input[name=items]")
 
+//vetor dos itens de coleta selecionados
 let selectedItems = []
 
 function handleSelectedItem(event) {
@@ -69,7 +78,6 @@ function handleSelectedItem(event) {
 
     //verifica se existem itens selecionados e returna o seu index
     const isSelected = selectedItems.findIndex(item => item == itemId) 
- 
 
     //remove o item do array se já estiver selecionado
     if(isSelected >= 0) {
@@ -82,6 +90,6 @@ function handleSelectedItem(event) {
         selectedItems.push(itemId)
     }
 
-    //atualiza o input hidden com os itens selecionados
+    //atualiza o input hidden com os itens selecionados, em ordem numérica
     collectedItems.value = selectedItems.sort()
 }
