@@ -24,7 +24,11 @@
             </header>
 
             <main>
-                <h1>Seu marketplace de coleta de resíduos</h1>
+                <!-- 
+                    Utilizando variáveis no HTML através do nunjucks 
+                    <h1> {{ title }} </h1>
+                -->
+                <h1> Seu marketplace de coleta de resíduos </h1>
 
                 <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
@@ -33,23 +37,7 @@
         </div>
     </div>
 
-    <div id="modal" class="hide">
-        <div class="content">
-            <div class="header">
-                <h1>Pontos de coleta</h1>
-                <a href="#">Fechar</a>
-            </div>
-            <form action="search">
-                <label for="search">Cidade</label>
-                <div class="search field">
-                    <input type="text" name="search" placeholder="Pesquise pela cidade" required>
-                    <button type="submit">
-                        <img src="assets/icons/search.svg" alt="Buscar">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+    {% include "partials/modal.html" %}
 
     <script src="scripts/index.js"></script>
 </body>
