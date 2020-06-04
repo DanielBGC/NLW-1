@@ -1,6 +1,9 @@
 const ufSelect = document.querySelector("select[name=uf]")
 const citySelect = document.querySelector("select[name=city]")
 
+//vetor com o nome de cada Estado e seu respectivo id
+let allStates = []
+
 function getStates() {
     const stateApi = fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados") 
 
@@ -9,7 +12,13 @@ function getStates() {
         return(response.json())
     }).then(function(states) {
         for(let state of states) {
-            ufSelect.innerHTML += `<option value="${state.id}"> ${state.nome} </option>`
+            //preenche o vetor allStates com os nomes dos Estados e seu respectivo id
+            allStates.push([state.nome, state.id])
+        }
+
+        //preenche o "select uf" com os nomes dos Estados em ordem alfabética
+        for(let state of allStates.sort()) {
+            ufSelect.innerHTML += `<option value=${state[1]}> ${state[0]} </option>`
         }
     })
 
@@ -19,6 +28,7 @@ function getStates() {
     })
 }
 getStates()
+console.log(allStates)
 
 //Função para carregar as cidades de cada estado
 function getCities(event) {
