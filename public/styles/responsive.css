@@ -28,6 +28,28 @@
 		width: 350px;
 		height: 200px;
 	}
+
+	#page-register .field-group {
+		flex-direction: column;
+	}
+
+	#page-register .field-group .field {
+		margin-right: 0px;
+
+		max-width: 100%;
+	}
+
+	#page-register form {
+		min-width: 400px;
+	}
+
+	#page-register header a span {
+		margin-left: 3em;
+	}
+
+	#page-register .items-grid {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 @media(min-width: 2200px) {
