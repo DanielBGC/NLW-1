@@ -65,7 +65,7 @@ db.serialize(function() {
 
     //Deleta todos os dados
     /* 
-        db.run(`DELETE FROM pessoas`) 
+        db.run(`DELETE FROM places`) 
     */
 
     /* 
@@ -78,13 +78,13 @@ db.serialize(function() {
     */
 
     //(4) CONSULTAR DADOS DA TABELA
-    /*
+    
         db.all(`SELECT * FROM places`, function(error, rows) {
             if(error) 
                 return console.log(error)
             else 
                 console.log(rows)
         })
-    */
+    
 
 })
