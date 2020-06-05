@@ -84,8 +84,14 @@ server.post("/saveregister",function(require, response) {
 //(3) página de listagem
 server.get("/search",function(require, response) {
 
+    const search = require.query.search
+
+    if(search == "") {
+        return response.render("search.html", {total: 0} )
+    }
+
     //pega os dados do banco de dados
-    db.all(`SELECT * FROM places`, function(error, rows) {
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%' `, function(error, rows) {
         if(error) 
             return console.log(error)
         else {
