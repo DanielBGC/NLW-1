@@ -1,9 +1,13 @@
+//importa a dependência express
 const express = require("express")
 
 //executa a função express
 const server = express()
 
-//configura a pasta public
+//importa o banco de dados
+const db = require("./database/db.js")
+
+//configura a pasta public para ser utilizada
 server.use(express.static("public"))
 
 //configurando a template engine (comunicação entre o HTML e o back-end)
@@ -27,7 +31,20 @@ server.get("/register",function(require, response) {
 
 //(3) página de listagem
 server.get("/search",function(require, response) {
-    return response.render("search.html")
+
+    //pega os dados do banco de dados
+    db.all(`SELECT * FROM places`, function(error, rows) {
+        if(error) 
+            return console.log(error)
+        else {
+            
+            //número de elementos existentes no array
+            const total  = rows.length
+
+            //mostra a página html com os dados do banco de dados
+            return response.render("search.html", {places: rows, total: total} )
+        }
+    })
 })
 
 //liga o servidor na porta 3000

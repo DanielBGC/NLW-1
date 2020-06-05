@@ -17,40 +17,45 @@
 {% block content %}
     <div id="page-search">
         
-            <!-- Pegando um arquivo separado através do nunjucks -->
-            {% include "partials/page-header.html" %}
+        <!-- Pegando um arquivo separado através do nunjucks -->
+        {% include "partials/page-header.html" %}
 
-            <main>
-                <h3> 2 Pontos </h3> encontrados
+        <main>
+
+            {% if total > 0 %}
+                <h3> {{total}} Pontos </h3> encontrados
             
                 <div class="cards">
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/HOnppISRn2zCbaePkXR2ynOQM26kyz8GgtGAjV2gjHHqECtlTHzgSiQK6_D9rniYtMbFbKLJWuHb31Y1-qviPKPwh6U=s9999" alt="Colectoria">
-                        <h1>Colectoria</h1>
-                        <h2>Componentes Eletrônicos, Lâmpadas</h2>
-                        <p>
-                            Uberaba, Minas Gerais <br>
-                            Avenida da Saudade, Jardim Uberaba <br>
-                            Nº 253
-                        </p>
-                    </div>
 
-                    <div class="card">
-                        <img src="https://www.aparasdepapelsaojorge.com.br/imagens/onde-tem-empresa-de-reciclagem-papelao.jpg" alt="Papersider">
-                        <h1>Papersider</h1>
-                        <h2>Papéis e Papelão</h2>
-                        <p>
-                            Uberaba, Minas Gerais <br>
-                            Rua Alfonso Miguel, Abadia <br>
-                            Nº 964
-                        </p>
-                    </div>
+                    {# Pegando os valores do banco de dados com uma estrutura de repetição #}
+                    {% for place in places %}
+                        <div class="card">
+                            <img src={{place.image}} alt={{place.name}}>
+                            <h1>{{place.name}}</h1>
+                            <h2>{{place.items}}</h2>
+                            <p>
+                                {{place.city}}, {{place.state}} 
+                                <br>
+                                {{place.address}} 
+                                <br>
+                                {{place.address2}}
+                            </p>
+                        </div>
+                    {% endfor %}
+    
                 </div>
-            </main>
 
-            <footer>
-                <a href="register"><span></span>Cadastre um novo ponto de coleta</a>
-            </footer>
+            {%else%}
+                <h3>Nenhum ponto de coleta foi encontrado na sua região</h1>
+
+            {% endif %}
+
+            
+        </main>
+
+        <footer>
+            <a href="register"><span></span>Cadastre um novo ponto de coleta</a>
+        </footer>
     </div>
 {% endblock content %}
     
