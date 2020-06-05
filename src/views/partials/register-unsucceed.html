@@ -1,0 +1,16 @@
+{# Modal de falha no cadastro #}
+
+<div id="modal" class="point">
+    <div class="content">
+        <img src="/assets/icons/error.svg" alt="Erro no cadastro">
+        <h1>Infelizmente, houve um erro no cadastro</h1>
+    </div>
+</div>
+
+<script>
+    //após 2 segundos, recarrega a página de cadastro
+    setTimeout(function() {
+    window.location = "/register"
+    } ,2000)
+    
+</script>

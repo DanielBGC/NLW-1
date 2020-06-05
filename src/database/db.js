@@ -85,6 +85,4 @@ db.serialize(function() {
             else 
                 console.log(rows)
         })
-    
-
 })

@@ -69,7 +69,7 @@ server.post("/saveregister",function(require, response) {
     function afterInsertData(error) {
         if(error) {
             console.log(error)
-            return response.send("Erro no cadastro")
+            return response.send("register.html", {saved: false})
         }
         else {
             console.log("Cadastro efetivado!")
@@ -87,7 +87,7 @@ server.get("/search",function(require, response) {
     const search = require.query.search
 
     if(search == "") {
-        return response.render("search.html", {total: 0} )
+        return response.render("search.html", {total: 0})
     }
 
     //pega os dados do banco de dados

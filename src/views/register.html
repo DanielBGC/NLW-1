@@ -53,7 +53,7 @@
                     <div class="field">
                         <label for="city">Cidade</label>
                         <select name="city" id="" disabled="disabled" required="required">
-                            <option value="">selecione a cidade</option>
+                            <option value="">Selecione a cidade</option>
                         </select>
 
                     </div>
@@ -62,7 +62,7 @@
                 <div class="field-group">
                     <div class="field">
                         <label for="adress">Endereço</label>
-                        <input type="text" name="address" required="required">
+                        <input type="text" name="address" required="required" placeholder="Rua, Bairro">
                     </div>
 
                     <div class="field">
@@ -123,7 +123,11 @@
 
 {% block modal %}
     {% if saved %}
-        {%include "partials/register-succeed.html" %}
+        {% include "partials/register-succeed.html" %}
+    {% endif %}
+
+    {% if saved == false %}
+        {% include "partials/register-unsucceed.html" %} 
     {% endif %}
 {% endblock modal %}
 
