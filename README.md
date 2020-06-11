@@ -63,10 +63,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 ```sh
   # Instale as dependências
   $ npm install
-
-  ## Crie o banco de dados
-  $ cd server
-
+  
   # Inicie a aplicação web
   $ npm start
 ```
